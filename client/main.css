@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+#button{
+	width: 100%;
+}
+
+input{
+	font-size: 25pt;
+}
