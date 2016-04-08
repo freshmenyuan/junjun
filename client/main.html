@@ -1,0 +1,66 @@
+<head>
+  <title>XiaoJun</title>
+</head>
+
+<body>
+
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+
+  <div class="row">
+    <div class="medium-8 medium-offset-2 columns">
+      <h1>Welcome to XiaoJunTech!</h1>
+    </div>
+  </div>
+
+  <form>
+
+    <div class="row">
+      <div class="medium-8 medium-offset-2 columns">
+        <label> 
+          <h5>称呼:</h5>
+          <input type="text" placeholder="李先生">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-8 medium-offset-2 columns">
+        <label>
+          <h5>上门地址:</h5>
+          <input type="text" placeholder="深圳市南山区...">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-8 medium-offset-2 columns">
+        <label>
+          <h5>上门地址:</h5>
+          <input type="text" class="span2" id="dp1">
+          <script>
+            $(function(){
+              $('#dp1').fdatepicker({
+                initialDate: '02-12-1989',
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true
+              });
+            });
+          </script>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-8 medium-offset-2 columns">
+        <input type="submit" class="button" value="Submit">
+      </div>
+    </div>
+
+  </form>
+
+  <button>Click Me</button>
+</template>
