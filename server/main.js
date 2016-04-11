@@ -7,17 +7,19 @@ Meteor.startup(() => {
 });
 
 Meteor.methods({
-	'sendToLewis'(text) {
-		check(text, String);
+	'sendToLewis'(name, mobile, address, date) {
+		console.log(name);
+		console.log(address);
+		console.log(date);
 
 		var requestData = {
 			token:"test",
 			msgBody:    
 			{
-				name:"袁先生3",
+				name:name,
 				mobNum: 15647424568,
-				add: "深圳市山区国际青年公寓",
-				bkDateStr:"2016-08-16"
+				add: address,
+				bkDateStr:date
 			}
 		};
 
