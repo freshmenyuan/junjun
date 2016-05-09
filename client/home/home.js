@@ -1,4 +1,5 @@
 Template.home.events({
+
     'submit .form-submit': function(event, template) {
 
         event.preventDefault();
@@ -8,13 +9,34 @@ Template.home.events({
         var name = template.$('.name').val();
         var address = template.$('.address').val();
         var date = template.$('.date').val();
-        console.log(name);
-        console.log(address);
-        console.log(date);
 
-        Meteor.call('sendToLewis', name, '', address, date, function(error, response) {
+        console.log("client: "+name);
+        console.log("client: "+address);
+        console.log("client: "+date);
+
+        Meteor.call('sendToLewis', name, '', address, date, function(err,response) {
             template.$('.form-button').removeAttr('disabled');
-            console.log("send");
         });
+
+        setTimeout('', 2000);
+
+        Meteor.setTimeout(function(){
+            Meteor.call('checkSubmitSuccess',function(error, response){
+                console.log(response);
+                if(response){
+                    window.location.href='success';
+
+                }else{
+                    window.location.href='error';
+                }
+            });
+            
+        }, 2000);
+
+        
+        
     }
 });
+
+
+
