@@ -20,7 +20,7 @@ Template.auth.events({
 				Meteor.clearTimeout(id);
 				template.$('.sendMessage-button').removeAttr("disabled"); 
 			}else{
-				template.$('.sendMessage-button').html("重新发送："+counter);	
+				template.$('.sendMessage-button').html(counter);	
 
 			}
 		}, 1000);
