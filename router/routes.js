@@ -4,8 +4,8 @@ Router.route('/', {
 	name: 'auth',
 });
 
-Router.route('/home', {
-	name: 'home'
+Router.route('/order', {
+	name: 'order'
 });
 
 Router.route('/success',{

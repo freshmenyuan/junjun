@@ -1,0 +1,91 @@
+<template name="order">
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+      <nav class="tab-bar">
+        <section class="middle tab-bar-section">
+          <h1 class="title">蘑菇私人订制</h1>
+        </section>
+      </nav>
+      <section class="main-section">
+        <!-- content goes here -->
+      </section>
+
+      <a class="exit-off-canvas"></a>
+
+    </div>
+  </div>
+
+  <br>
+
+  <!-- <p>{{phoneNo}}</p> -->
+
+  <!-- {{#if phoneNO }} -->
+
+
+  <form class="form-submit">
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns">
+        <label> 
+          <h5>称呼:</h5>
+          <input type="text" placeholder="李先生" class="name" required>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns">
+        <label> 
+          <h5>联系方式:</h5>
+          <input type="text" placeholder="" class="contact" required>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns">
+        <label>
+          <h5>上门地址:</h5>
+          <input type="text" placeholder="深圳市南山区..." class="address" required>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns" required>
+        <label>
+          <h5>预约日期:</h5>
+          <input type="date" class="date" required>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns">
+        <label>
+          <h5>留言:</h5>
+          <textarea rows="4" cols="50" placeholder="">
+
+          </textarea>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-10 medium-offset-1 columns">
+        <button type="submit" class="form-button weui_btn weui_btn_primary small button">提交订单</button>
+      </div>
+    </div>
+
+  </form>
+<!-- 
+  {{ else }}
+
+  <div class="row">
+    <div class="medium-10 medium-offset-1 columns">
+      <a href="auth">抱歉！您还没有注册请前往主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...点击...</a>
+    </div>
+  </div>
+  {{/ if }} -->
+
+</template>

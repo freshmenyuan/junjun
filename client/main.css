@@ -10,11 +10,11 @@ input{
 
 .sendMessage-button{
 	font-size: 10pt;
-	left: 2px;
+	left: 1px;
 	width: 98%;
 }
 
-.logan{
-
+.phone{
+	right: 1px;
 }
 

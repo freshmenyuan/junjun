@@ -1,8 +1,6 @@
-// Template.auth.helpers({
-// 	response: function() {
-// 		return "home.html";
-// 	},
-// });
+Template.auth.helpers({
+
+});
 
 var phone_number = "";
 
@@ -52,15 +50,14 @@ Template.auth.events({
 			Meteor.call('checkSubmitMsgCodeSuccess',function(error, response){
 				console.log(response);
 				if(response){
-					window.location.href='home';
-				// console.log(response);
+					window.location.href='order';
+					Session.set("phoneNo", phone_number);
 
-			}else{
-				// window.location.href='error';
-				template.$('.MsgCode').val("验证码有误！");
-				console.log(response);
-			}
-		});
+				}else{
+					template.$('.MsgCode').val("验证码有误！");
+					console.log(response);
+				}
+			});
 		}, 2000);
 
 		VarCode = 0;

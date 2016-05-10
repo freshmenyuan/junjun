@@ -1,4 +1,12 @@
-Template.home.events({
+Template.order.helpers({
+  phoneNO: function () {
+    template.$('.contact').val(Session.get("phoneNo"));
+    console.log(Session.get("phoneNo"));
+    return Session.get("phoneNo");
+} 
+});
+
+Template.order.events({
 
     'submit .form-submit': function(event, template) {
 
