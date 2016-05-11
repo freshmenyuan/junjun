@@ -76,7 +76,7 @@ Meteor.methods({
 			msgBody:    
 			{
 				name:name,
-				mobNum: 15647424568,
+				mobNum: mobile,
 				add: address,
 				bkDateStr:date
 			}

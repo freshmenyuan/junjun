@@ -1,8 +1,17 @@
+
+Template.auth.onCreated( function() {
+	
+});
+
 Template.auth.helpers({
+	auth: function () {
+		return true;
+	},
 
 });
 
 var phone_number = "";
+var timerid;
 
 Template.auth.events({
 
@@ -12,11 +21,12 @@ Template.auth.events({
 		var counter = 60;
 
 		template.$('.sendMessage-button').attr('disabled', 'disabled');
-		var id = Meteor.setInterval(function(){
+		timerid = Meteor.setInterval(function(){
 			counter--;
 			if(counter < 0){
-				Meteor.clearTimeout(id);
+				Meteor.clearTimeout(timerid);
 				template.$('.sendMessage-button').removeAttr("disabled"); 
+				template.$('.sendMessage-button').html("发送");
 			}else{
 				template.$('.sendMessage-button').html(counter);	
 
@@ -25,17 +35,16 @@ Template.auth.events({
 
 		var phone = template.$('.phone').val();
 		phone_number = phone;
-		console.log(phone);
 
 		Meteor.call('phoneVarification', phone, function(error, response) {
-			console.log("client: "+response);
 		});
 	},
 
 	'submit .check-sendMessage':function(event, template){
 		event.preventDefault();
 
-		// template.$('.check-sendMessage-button').attr('disabled', 'disabled');
+		// Session.set('phoneNo', 123);
+		// Router.go('order');
 
 		var VarCode = template.$('.MsgCode').val();
 
@@ -48,10 +57,11 @@ Template.auth.events({
 
 		Meteor.setTimeout(function(){
 			Meteor.call('checkSubmitMsgCodeSuccess',function(error, response){
-				console.log(response);
 				if(response){
-					window.location.href='order';
-					Session.set("phoneNo", phone_number);
+					Session.set('phoneNo', phone_number);
+					console.log(Session.get('phoneNo'));
+					Meteor.clearTimeout(timerid);
+					Router.go('order');
 
 				}else{
 					template.$('.MsgCode').val("验证码有误！");

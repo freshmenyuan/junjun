@@ -1,21 +1,4 @@
 <template name="auth">
-	<div class="off-canvas-wrap" data-offcanvas>
-		<div class="inner-wrap">
-			<nav class="tab-bar">
-				<section class="middle tab-bar-section">
-					<h1 class="title">蘑菇私人订制</h1>
-				</section>
-			</nav>
-			<section class="main-section">
-				<!-- content goes here -->
-			</section>
-
-			<a class="exit-off-canvas"></a>
-
-		</div>
-	</div>
-
-	<br>
 
 	<div class="row">
 		<div class="medium-10 medium-offset-1 columns">
@@ -29,7 +12,7 @@
 		<div class="medium-10 medium-offset-1 columns">
 			<div class="row collapse">
 				<div class="small-9 columns">
-					<input type="text" class="phone" placeholder="">
+					<input type="text" class="phone" placeholder="" required>
 				</div>
 				<div class="small-3 columns">
 					<button class="sendMessage-button weui_btn weui_btn_primary tiny button button postfix">发送</button>
@@ -37,18 +20,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- 	<div class="row">
-		<div class="medium-7 medium-offset-1 columns">
-			<label>
-				<input type="text" placeholder="" class="phone" required>
-			</label>
-		</div>
-
-		<div class="medium-3 columns end">
-			<button class="sendMessage-button weui_btn weui_btn_primary tiny button">发送验证码</button>
-		</div>
-	</div> -->
 
 	<form class="check-sendMessage">
 
@@ -68,5 +39,5 @@
 		</div>
 
 	</form>
-
+	
 </template>
